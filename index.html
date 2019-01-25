@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <titleKendin Tasarla</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fabric.min.js"></script>
+    <script src="js/customizeFabric.min.js"></script>
+    
+    
+</head>
+<body class="hm-gradient">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">INDE<span>DIJITAL</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Ana sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="urun.html">KENDIN TASARLA</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="urunler.html" id="urunler2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mağaza
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="urunler">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item"  href="#">Another action</a>
+                        <a class="dropdown-item"  href="#">Something else here</a>
+                        <li class="dropdown-divider"></li>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                        <li class="dropdown-divider"></li>
+                        <a class="dropdown-item"  href="#">One more separated link dsa dsa das dsa d</a>
+                        <li class="dropdown-submenu">
+                            <a href="urunler.html" class="dropdown-item">Dropdown 1</a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Action</a>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-item">Dropdown 2</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="dropdown-item">Dropdown 3</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                <li class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                                <li class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="#">One more separated link</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav float-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> sepetim
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i> hesabım</a>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+    
+    <div class="jumbotron jumb-header">
+        <div class="container">
+            <h1>Kendin Tasarla</h1> 
+            <p>Onlarca üründen istediğiniz ürünü kendinize göre tasarlayın!</p> 
+        </div>
+        <div class="jumb-jel"></div>
+    </div>
+    <div class="container mb-5">
+        <ul class="breadcrumb">
+            <li><a href="#">Ana sayfa</a></li>
+            <li><a href="#">Kendin Tasarla</a></li>
+            <li>T shirt</li>
+            <li>T shirt</li>
+        </ul>
+       
+        
+        <div class="row">
+        
+            <!--left-->
+            <div class="card product-card">
+			<div class="container-fliud ">
+				<div class="wrapper row">
+					<div class="preview col-lg-6 pl-1 pr-1 ">
+                        <div class="container " id = "canvasContainer">
+                            <div id="canvasMenu" class="container">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label class="cnvs-btn">
+                                            <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                            <span class="text">resim ekle</span>
+                                            <input type="file" id="imgLoader" hidden>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="cnvs-btn">
+                                            <i class="fa fa-font" aria-hidden="true"></i>
+                                            <span class="text">yazı ekle</span>
+                                            <button id="yaziEkleBtn" onClick="textPanel()" hidden></button>
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="cnvs-btn">
+                                            <i class="fa fa-sticky-note" aria-hidden="true"></i>
+                                            <span class="text">sticker ekle</span>
+                                            <button onClick="stickerPanel()" hidden></button>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container" id = "canvasWrapper">
+                                <div  class="container" id = "canvasPosition">
+                                    <div class="textPanel">
+                                        <div class="row">
+                                            <div class="col-8 form-group">
+                                                
+                                                <input type="text" name="fontText" onkeyup="updateFontText()" id="fontText" class="form-control" value="Merhaba"/>
+                                            </div>
+                                            <div class="col-lg-4 form-group">
+                                                <button onclick="textBold()">B</button> 
+                                                <button onclick="textItalic()" >I</button>
+                                                <button onclick="textUnderLine()" >_</button>
+                                            </div>
+                                            <div class="col-lg-6 form-group">
+                                                <select name="fontFamily" id="fontFamily" onchange="updateFontFamily()"  class="form-control">
+                                                    <option value ="Arial" style="font-family: 'Arial'" selected>
+                                                        Arial
+                                                    </option>
+                                                    <option value ="Helvetica" style="font-family: 'Helvetica'">
+                                                        Helvetica
+                                                    </option>
+                                                    <option value ="Times New Roman" style="font-family: 'Times New Roman'">
+                                                        Times New Roman
+                                                    </option>
+                                                    <option value ="Supermercado One" style="font-family: 'Supermercado One'">
+                                                        Supermercado One
+                                                    </option>
+                                                    <option value ="Droid Sans" style="font-family: 'Droid Sans'">
+                                                        Droid Sans
+                                                    </option>
+                                                    <option value ="Roboto" style="font-family: 'Roboto'">
+                                                        Roboto
+                                                    </option>
+                                                    <option value ="Rammetto One" style="font-family: 'Rammetto One'">
+                                                        Rammetto One
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-lg-6 form-group">
+                                                <input type="color" id="fontColor" onchange="updateFontColor()" class="form-control color-check" list="colors"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stickerPanel">
+                                        <div class="row">
+                                            <div class="stickerImages">
+                                                <div class="col-4 stickerImage" onclick="addSticker('pizza.png')">
+                                                    <img src="images/stickers/pizza.png">
+                                                </div>
+                                                <div class="col-4 stickerImage" onclick="addSticker('maymun.png')">
+                                                    <img src="images/stickers/maymun.png">
+                                                </div>
+                                                <div class="col-4 stickerImage" onclick="addSticker('donut.png')">
+                                                    <img src="images/stickers/donut.png">
+                                                </div>
+                                                <div class="col-4 stickerImage" onclick="addSticker('supermen.png')">
+                                                    <img src="images/stickers/supermen.png">
+                                                </div>
+                                                <div class="col-4 stickerImage" onclick="addSticker('linux-inside.png')">
+                                                    <img src="images/stickers/linux-inside.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="on"></canvas>
+                                    <canvas id="arka"></canvas>
+                                    <canvas id="arka2"></canvas>
+                                    <canvas id="arka3"></canvas>
+                                </div>
+                                <div class="container innerLeft" id="canvasInnerMenu">
+                                    <label class="cnvs-inner-btn" style="background-image: url('images/templates/front-t-shirt.png')">
+                                        <button name="surfaces[]" value="on" onClick="setCanvas('on')" hidden></button>
+                                    </label>
+                                    <label class="cnvs-inner-btn" style="background-image: url('images/templates/back-t-shirt.png')">
+                                        <button name="surfaces[]" value="arka" onClick="setCanvas('arka')" hidden></button>
+                                    </label>
+                                </div>
+                                <div class="container innerRight" id="canvasInnerMenu">
+                                    <button class="btn cnvs-zoom-btn m-1" onclick="zoom('in')"> + </button>
+                                    <button class="btn cnvs-zoom-btn m-1" onclick="zoom('out')"> - </button>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					<div class="details col-lg-6 pl-3 pr-3">
+						<h3 class="product-title">erkek t-shirt kendin tasarla</h3>
+						<div class="rating">
+							<div class="stars2">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 yorum</span>
+						</div>
+						<p class="product-description">
+                            Burada t shirtün özelliklerini anlatan açıklama yazısı bulunacak. T shirt %30 pamuklu %70 polyester gibi.
+                        </p>
+						<h4 class="price">Toplam Fiyat: <span>45 tl</span></h4>
+						<p class="vote">Alıcıların <strong>91%</strong>'i bu ürünü beğendiler. <strong>(87 votes)</strong></p>
+						
+                        
+						<div class="feature">
+                            <div class="feature-title">renk</div>
+                            <div class="feature-desc">İstediğiniz rengi seçiniz.</div>
+                            <label class="color white">
+                                <input class="color-check" type="radio" id="colorRadio" name="color" value="white" checked="checked"/>
+                                <div class="color-checked"></div>
+                            </label>
+                            <label class="color orange">
+                                <input class="color-check" type="radio" id="colorRadio" name="color" value="orange" />
+                                <div class="color-checked"></div>
+                            </label>
+                            <label class="color blue">
+                                <input class="color-check" type="radio" id="colorRadio" name="color" value="blue" />
+                                <div class="color-checked"></div>
+                            </label>
+							<label class="color green">
+                                <input class="color-check" type="radio" id="colorRadio" name="color" value="green" />
+                                <div class="color-checked"></div>
+                            </label>
+						</div>
+                        <div class="feature">
+                            <div class="feature-title">Beden</div>
+                            <div class="feature-desc">İstediğiniz bedeni belirtiniz.</div>
+							<label class="size size-background">
+                                <input class="size-check" type="radio" name="size" /> 
+                                <div class="size-checked"> xs </div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="radio" name="size" /> 
+                                <div class="size-checked"> s </div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="radio" name="size" /> 
+                                <div class="size-checked"> m </div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="radio" name="size" /> 
+                                <div class="size-checked"> l </div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="radio" name="size" /> 
+                                <div class="size-checked"> xl </div>
+                            </label>
+						</div>
+                        <!--
+                        <div class="feature">
+                            <div class="feature-title">Boyut</div>
+                            <div class="feature-desc">İstediğiniz bedeni belirtiniz.</div>
+							<label class="size size-background">
+                                <input class="size-check" type="radio" name="enboy" /> 
+                                <div class="size-checked"> 30x30 </div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="radio" name="enboy" /> 
+                                <div class="size-checked"> 40x40</div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="radio" name="enboy" /> 
+                                <div class="size-checked"> 57x82 </div>
+                            </label>
+						</div>
+                        <div class="feature">
+                            <div class="feature-title">boyutlar</div>
+                            <div class="feature-desc">İstediğiniz bedenleri seçiniz</div>
+							<label class="size size-background">
+                                <input class="size-check" type="checkbox" name="enboy[]" /> 
+                                <div class="size-checked"> 30x30 </div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="checkbox" name="enboy[]" /> 
+                                <div class="size-checked"> 40x40</div>
+                            </label>
+                            <label class="size size-background">
+                                <input class="size-check" type="checkbox" name="enboy[]" /> 
+                                <div class="size-checked"> 57x82 </div>
+                            </label>
+						</div>
+                        !-->
+						<div class="action">
+							<button class="add-to-cart btn btn-default" type="button">SEPETE EKLE</button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+            <!--/right-->
+        </div>
+        
+        <!--/ <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#"> < </a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#"> > </a></li>
+        </ul>
+        -->
+        
+    </div>
+    
+    
+    
+    <div class="jumbotron jumb-footer">
+        <div class="container">
+            <h1>INCE DIJITAL</h1> 
+            <p>Yapım aşamasında</p> 
+        </div>
+        <div class="jumb-jel"></div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Droid Sans', 'Droid Serif'],
+            families: ['Supermercado One', 'Supermercado One'],
+            families: ['Roboto', 'Roboto'],
+            families: ['Rammetto One', 'Rammetto One'],
+        }
+    });
+    </script>
+    <script type="text/javascript">
+        overWriteFabric();
+            
+        var width = document.getElementById("canvasPosition").offsetWidth;
+        var height = document.getElementById("canvasPosition").offsetHeight;
+            
+        var canvas, canvasId, zoomIn, zoomOut;
+            
+        var surfaces = document.getElementsByName("surfaces[]");
+        var l = surfaces.length;
+        for(i=0;i<l;i++) {
+            //1 Canvas ID:
+            var canvasId = surfaces.item(i).value;
+            //2 Canvas back Image
+            if(i==1) {
+                var canvasImage = 'back-t-shirt.png';
+            }else{
+                var canvasImage = 'front-t-shirt.png';
+            }
+            //3 Canvas Bounds
+            if(i== 1) {
+                var bounds = new Array(
+                    new Array(
+                        32,30,35,10
+                    ),
+                    new Array(
+                        32,45,35,20
+                    )
+                );
+            }else{
+                var bounds = new Array(
+                    new Array(
+                        30,25,40,50
+                    )
+                );
+            }
+            
+            addCanvas(canvasId, canvasImage, bounds);
+        }
+            
+            
+        setCanvas(surfaces.item(0).value);
+            
+        ///SET CANVAS///
+        function setCanvas(canvasName) {
+            for(i=0;i<l;i++) {
+                if (surfaces.item(i).value != canvasName) {
+                    $('#'+surfaces.item(i).value).parent().css('display', 'none');
+                }
+            }
+            $('#'+canvasName).parent().css('display', 'block');
+            canvasId = canvasName;
+            canvas = document.getElementById(canvasName).fabric;
+            
+            canvasResize(canvas);
+        }
+        
+        ///NEW CANVAS///
+        function addCanvas(canvasId, bgImage, bounds) {            
+            var newCanvas = new fabric.Canvas(canvasId, {
+                  preserveObjectStacking: true
+            });
+                
+            newCanvas.selectionColor = 'rgba(0,0,255,0.1)';
+            newCanvas.selectionBorderColor = 'white';
+            newCanvas.selectionLineWidth = 1;
+                
+            newCanvas.setWidth(width);
+            newCanvas.setHeight(height);
+            fabric.Image.fromURL('images/templates/' + bgImage, function(oImg) {
+                var templateImage = oImg.set({
+                    left: 0,
+                    top: 0,
+                    width:newCanvas.width,
+                    height:newCanvas.height,
+                    selectable:false,
+                    evented:false
+                });
+                newCanvas.add(templateImage);
+                for (i=0;i<bounds.length;i++) {
+                    newCanvas.add(addBound(bounds[i][0], bounds[i][1], bounds[i][2], bounds[i][3]));
+                }
+            });
+                
+            newCanvas.renderAll();
+            newCanvas.calcOffset();
+            document.getElementById(canvasId).fabric = newCanvas;
+        }
+            
+            
+        function addBound(startX, startY, finishX, finishY) {
+            var bound = new fabric.Rect({
+                left:canvas.width*startX/100,
+                top:canvas.width*startY/100,
+                width: canvas.width*finishX/100,
+                height: canvas.width*finishY/100,
+                fill: null,
+                stroke: '#777',
+                strokeDashArray: [canvas.width/200, canvas.width/200],
+                strokeWidth: canvas.width/300,
+                selectable:false,
+                evented:false
+            });
+            
+            return bound;
+        }
+            
+        function addText() {
+            var text = new fabric.IText(
+                "Merhaba",
+                {
+                    fill:'#000',
+                    fontFamily:'Arial',
+                    fontSize:canvas.width/10
+                }
+            );
+            text = customizeFabric(text);
+            canvas.centerObject(text);
+            canvas.add(text);
+            canvas.setActiveObject(text);
+        }
+        
+        function updateText() {
+            var text = canvas.getActiveObject();
+            if(text && text.get("type") == "i-text") {
+                $('.textPanel').slideDown( "fast", "linear" );
+            }
+        }
+        
+        function clearTextPanel() {
+            $('#fontText').val("Merhaba");
+            $('#fontFamily').val($("#fontFamily option:first").val());
+            $('#fontColor').val("#000");
+        }
+        
+        function updateFontText() {
+            var object = canvas.getActiveObject();
+            if(object && object.get("type") == "i-text") {
+                object.setText($('#fontText').val());
+                canvas.renderAll();
+            }
+        }
+        
+        function updateFontFamily() {
+            var object = canvas.getActiveObject();
+            if(object && object.get("type") == "i-text") {
+                object.setFontFamily($('#fontFamily').val());
+                canvas.renderAll();
+            }
+        }
+        
+        function updateFontColor() {
+            var object = canvas.getActiveObject();
+            if(object && object.get("type") == "i-text") {
+                object.setFill($('#fontColor').val());
+                canvas.renderAll();
+            }
+        }
+        
+        function addSticker(sticker) {
+            fabric.Image.fromURL('images/stickers/' + sticker, function(image) {
+                var newImageWidth = image.width;
+                var newImageHeight = image.height;
+                if(newImageHeight > canvas.height && newImageWidth < canvas.width) {
+                    newImageHeight = canvas.height/4;
+                    newImageWidth = newImageHeight/image.getHeight()*image.getWidth();
+                }else if(newImageHeight < canvas.height && newImageWidth > canvas.width) {
+                    newImageWidth = canvas.width/4;
+                    newImageHeight = newImageWidth/image.getWidth()*image.getHeight();
+                }else if(newImageHeight > canvas.height && newImageWidth > canvas.width) {
+                    while(newImageHeight*4>canvas.height && newImageWidth*4>canvas.width) {
+                        if(newImageWidth>newImageHeight) {
+                            newImageWidth = canvas.width/4;
+                            newImageHeight = newImageWidth/image.getWidth()*image.getHeight();
+                        }else{
+                            newImageHeight = canvas.height/4;
+                            newImageWidth = newImageHeight/image.getHeight()*image.getWidth();
+                        }
+                    }
+                }
+                image.set({
+                    angle: 0,
+                    padding: 0,
+                    width:newImageWidth,
+                    height:newImageHeight
+                });
+                
+                image = customizeFabric(image);
+                canvas.centerObject(image);
+                canvas.add(image);
+                canvas.setActiveObject(image);
+                canvasResize(canvas);
+                stickerPanel();
+            });
+        }
+            
+        //resim yükleme
+        var imageInput = document.getElementById('imgLoader');
+        imageInput.onchange = function handleImage(e) {
+            var reader = new FileReader();
+            reader.onload = function (event){
+                var imgObj = new Image();
+                imgObj.src = event.target.result;
+                imgObj.onload = function () {
+                    var image = new fabric.Image(imgObj);
+                    var newImageWidth = imgObj.width;
+                    var newImageHeight = imgObj.height;
+                    //calculate new ımage width and height
+                    if(newImageHeight > canvas.height && newImageWidth < canvas.width) {
+                        newImageHeight = canvas.height-30;
+                        newImageWidth = newImageHeight/image.getHeight()*image.getWidth();
+                    }else if(newImageHeight < canvas.height && newImageWidth > canvas.width) {
+                        newImageWidth = canvas.width-30;
+                        newImageHeight = newImageWidth/image.getWidth()*image.getHeight();
+                    }else if(newImageHeight > canvas.height && newImageWidth > canvas.width) {
+                        
+                        while(newImageHeight+30>canvas.height && newImageWidth+30>canvas.width) {
+                            if(newImageWidth>newImageHeight) {
+                                newImageWidth = canvas.width-30;
+                                newImageHeight = newImageWidth/image.getWidth()*image.getHeight();
+                            }else{
+                                newImageHeight = canvas.height-30;
+                                newImageWidth = newImageHeight/image.getHeight()*image.getWidth();
+                            }
+                        }
+                    }
+                    
+                    image.set({
+                        angle: 0,
+                        padding: 0,
+                        width:newImageWidth,
+                        height:newImageHeight
+                    });
+                        
+                    image = customizeFabric(image);
+                    canvas.centerObject(image);
+                    canvas.add(image).setActiveObject(image);
+                    canvas.renderAll();
+                }
+            }
+            reader.readAsDataURL(e.target.files[0]);
+            imageInput.value=null;
+        }
+            
+            
+        function stickerPanel() {
+            $(document).ready(function(){
+                if (!($('.textPanel').is(':hidden'))){
+                    $(".textPanel").slideUp( "fast", "linear" );
+                }
+                $(".stickerPanel").slideToggle( "fast", "linear" );
+            });
+        }
+        
+        function textPanel() {
+            if(!($('.stickerPanel').is(':hidden'))) {
+                $(".stickerPanel").slideUp( "fast", "linear" );
+            }
+            if($('.textPanel').is(':hidden')){
+                var object = canvas.getActiveObject();
+                if(!object) {
+                    addText();
+                    $('.textPanel').slideDown( "fast", "linear" );
+                }else{
+                    $("#fontText").val(object.getText());
+                    $("#fontFamily").val(object.getFontFamily());
+                    $("#fontColor").val(object.getFill());
+                    $('.textPanel').slideDown( "fast", "linear" );
+                }
+                
+            }else{
+                clearTextPanel();
+                $('.textPanel').slideUp("fast", "linear");
+            }
+        }
+        
+        canvas.on('object:selected', function(event) {
+            var object = event.target;
+            canvas.bringToFront(object);
+            canvas.calcOffset();
+            if (!($('.textPanel').is(':hidden'))){
+                $("#fontText").val(object.getText());
+                $("#fontFamily").val(object.getFontFamily());
+                $("#fontColor").val(object.getFill());
+            }
+        });
+        
+        $("canvas").on("mousedown", function() {
+            var object = canvas.getActiveObject();
+            if(!($('.stickerPanel').is(':hidden'))) {
+                $('.stickerPanel').slideUp();
+            }
+            
+            if(!object) {
+                if(!($('.textPanel').is(':hidden'))) {
+                    clearTextPanel();
+                    $('.textPanel').slideUp();
+                }
+            }
+            
+        });
+        
+        $('#canvasWrapper').css('background-color', $("#colorRadio").val());
+        $('.cnvs-inner-btn').css('background-color', $("#colorRadio").val());
+        $('input[type=radio][name=color]').change(function() {
+            $('#canvasWrapper').css('background-color', this.value);
+            $('.cnvs-inner-btn').css('background-color', this.value);
+        });
+        
+        
+        
+        function loadStickers() {
+            
+            const testFolder = './images/stickers/';
+            const fs = require('fs');
+
+            fs.readdir(testFolder, (err, files) => {
+                files.forEach(file => {
+                    alert(file);
+                });
+            });
+        }
+        
+        function mouseMode(mode) {
+            if(mode=="zoomIn") {
+                zoomIn = true;
+                zoomOut = false;
+                expand = false;
+            }else if(mode=="zoomOut"){
+                zoomIn = false;
+                zoomOut = true;
+                expand = false;
+            }else{
+                zoomIn = false;
+                zoomOut = false;
+                expand = true;
+            }
+        }
+        /*
+        var panning = false;
+        canvas.on('mouse:up', function (e) {
+            panning = false;
+            canvas.selection = true;
+        });
+
+        canvas.on('mouse:down', function (e) {
+            panning = true;
+            canvas.selection = false;
+        });
+        canvas.on('mouse:move', function (e) {
+            if (panning && e && e.e) {
+                var units = 10;
+                var delta = new fabric.Point(e.e.movementX, e.e.movementY);
+                canvas.relativePan(delta);
+            }
+        });
+       */
+        
+        $(window).resize(function() {
+            canvasResize(canvas);
+            customizeFabric();
+        });
+            
+        function canvasResize(canvas) {
+            newCanvasWidth = document.getElementById("canvasPosition").offsetWidth;
+                
+            if (canvas.width != newCanvasWidth) {
+                scaleMultiplier = newCanvasWidth / canvas.width;
+                var objects = canvas.getObjects();
+                for (var i in objects) {
+                    objects[i].scaleX = objects[i].scaleX * scaleMultiplier;
+                    objects[i].scaleY = objects[i].scaleY * scaleMultiplier;
+                    objects[i].left = objects[i].left * scaleMultiplier;
+                    objects[i].top = objects[i].top * scaleMultiplier;
+                    objects[i].setCoords();
+                    objects[i].transparentCorners= false;
+                    
+                }
+
+                canvas.setWidth(canvas.getWidth() * scaleMultiplier);
+                canvas.setHeight(canvas.getHeight() * scaleMultiplier);
+                canvas.renderAll();
+                canvas.calcOffset();
+            }
+            
+        }
+            
+        function customizeFabric(object){
+            var trVal = false;
+            if(object.get("type") == "i-text") {
+                trVal = true;
+            }
+            object.setControlsVisibility({
+                 mt: false, 
+                 mb: false, 
+                 ml: false, 
+                 mr: false, 
+                 bl: true,
+                 br: true, 
+                 tl: true, 
+                 tr: trVal,
+                 mtr: false, 
+            });
+            
+            object.customiseCornerIcons({
+                settings: {
+                    cornerSize: 20,
+                    cornerBackgroundColor: 'black',
+                    transparentCorners:true,
+                    cornerShape:'circle',
+                    cornerPadding: 0,
+                },
+                tl: {
+                    icon: 'images/rotate.svg',
+                },
+                tr: {
+                    icon: 'images/edit.svg',
+                },
+                bl: {
+                    icon: 'images/trash.svg',
+                    settings: {
+                        cornerBackgroundColor: 'red',
+                    },
+                },
+                br: {
+                    icon: 'images/resize.svg',
+                },
+            }, function() {
+                canvas.renderAll();
+            });
+                
+            return object;
+        }
+            
+        function overWriteFabric() {
+            
+            fabric.Canvas.prototype.customiseControls({
+                tl: {
+                    action: 'rotate',
+                    cursor: 'crosshair',
+                },
+                tr: {
+                    action: function(e,target) {
+                        if(target.get("type") == "i-text") {
+                            updateText();
+                        }
+                    },
+                    cursor:'pointer',
+                },
+                bl: {
+                    action: function(e,target) {
+                        canvas.remove(target);
+                        canvas.calcOffset();
+                        canvas.setCoords();
+                    },
+                    cursor: 'pointer',
+                },
+                br: {
+                    action: 'scale',
+                },
+            });
+        }
+            
+    </script>
+    
+    <script src="js/swiper.min.js"></script>
+    <script src="js/scrollPosStyler.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 1200
+            })
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+    
+    </body>
+</html>
